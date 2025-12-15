@@ -9,6 +9,25 @@ import faceAttend from "../assets/python.jpg";
 
 const projects = [
   {
+    title: "FaceAttend – Reconnaissance Faciale",
+    description:
+      "Système intelligent de suivi de présence par reconnaissance faciale, orienté éducation.",
+    tech: ["Python", "OpenCV", "FastAPI"],
+    github: "https://github.com/ton/repo-faceattend",
+    demo: null,
+    image: "src/assets/face.jpg",
+  },
+    {
+    title: "Plateforme E-Commerce",
+    description:
+      "Solution e-commerce complète avec panier dynamique, paiement sécurisé et gestion des commandes.",
+    tech: ["Django", "React", "Stripe"],
+    github: "https://github.com/ton/repo-ecommerce",
+    demo: null,
+    image: "src/assets/ecom.jpg",
+  },
+
+  {
     title: "App de Lecture PDF",
     description:
       "Application desktop pour extraire, analyser et lire des documents PDF. Optimisée pour l’automatisation documentaire.",
@@ -24,26 +43,9 @@ const projects = [
     tech: ["FastAPI", "Twilio", "JWT"],
     github: "https://github.com/ton/repo-messages",
     demo: null,
-    image: messagingApp,
+    image: "src/assets/sms.jpg",
   },
-  {
-    title: "Plateforme E-Commerce",
-    description:
-      "Solution e-commerce complète avec panier dynamique, paiement sécurisé et gestion des commandes.",
-    tech: ["Django", "React", "Stripe"],
-    github: "https://github.com/ton/repo-ecommerce",
-    demo: null,
-    image: ecommerce,
-  },
-  {
-    title: "FaceAttend – Reconnaissance Faciale",
-    description:
-      "Système intelligent de suivi de présence par reconnaissance faciale, orienté éducation.",
-    tech: ["Python", "OpenCV", "FastAPI"],
-    github: "https://github.com/ton/repo-faceattend",
-    demo: null,
-    image: faceAttend,
-  },
+
 ];
 
 const Projects = () => {

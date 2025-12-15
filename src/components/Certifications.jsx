@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FaCertificate, FaPython, FaDocker } from "react-icons/fa";
 
 import pythonCert from "../assets/python.jpg";
-import devopsCert from "../assets/python.jpg";
+import devopsCert from "../assets/site.png";
 
 const certifications = [
   {

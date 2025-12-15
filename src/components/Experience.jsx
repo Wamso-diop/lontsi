@@ -108,7 +108,7 @@ const ExperienceTimeline = () => {
           <span className="text-purple-400 uppercase text-sm tracking-widest font-semibold">
             Timeline
           </span>
-        <h2 className="text-4xl md:text-5xl font-extrabold text-white mt-4 flex items-center justify-center gap-8">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-white mt-4 flex items-center justify-center gap-4">
           <FaGraduationCap className="text-purple-400 w-10 h-10" />
           Formations
           <span className="text-gray-400 mx-2">|</span>

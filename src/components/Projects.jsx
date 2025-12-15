@@ -15,7 +15,7 @@ const projects = [
     tech: ["Python", "Tkinter", "PyPDF2"],
     github: "https://github.com/ton/repo-pdf",
     demo: null,
-    image: pdfApp,
+    image: "src/assets/pdf.png",
   },
   {
     title: "Système d’Envoi de Messages",

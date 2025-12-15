@@ -2,10 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
-import pdfApp from "../assets/python.jpg";
-import messagingApp from "../assets/python.jpg";
-import ecommerce from "../assets/python.jpg";
-import faceAttend from "../assets/python.jpg";
+import pdfApp from "../assets/pdf.png";
+import messagingApp from "../assets/sms.jpg";
+import ecommerce from "../assets/pdf.png";
+import faceAttend from "../assets/face.jpg";
 
 const projects = [
   {
@@ -15,7 +15,7 @@ const projects = [
     tech: ["Python", "OpenCV", "FastAPI"],
     github: "https://github.com/ton/repo-faceattend",
     demo: null,
-    image: "src/assets/face.jpg",
+    image: faceAttend,
   },
     {
     title: "Plateforme E-Commerce",
@@ -24,7 +24,7 @@ const projects = [
     tech: ["Django", "React", "Stripe"],
     github: "https://github.com/ton/repo-ecommerce",
     demo: null,
-    image: "src/assets/ecom.jpg",
+    image: ecommerce,
   },
 
   {
@@ -34,7 +34,7 @@ const projects = [
     tech: ["Python", "Tkinter", "PyPDF2"],
     github: "https://github.com/ton/repo-pdf",
     demo: null,
-    image: "src/assets/pdf.png",
+    image: pdfApp,
   },
   {
     title: "Système d’Envoi de Messages",
@@ -43,7 +43,7 @@ const projects = [
     tech: ["FastAPI", "Twilio", "JWT"],
     github: "https://github.com/ton/repo-messages",
     demo: null,
-    image: "src/assets/sms.jpg",
+    image: messagingApp,
   },
 
 ];

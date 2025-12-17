@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes, FaSun, FaMoon } from "react-icons/fa";
-import profile from "../assets/profile.png";
+import profile from "../assets/top.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);

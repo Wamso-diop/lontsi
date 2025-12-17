@@ -11,7 +11,7 @@ const experiences = [
   type: "work",
   role: "Développeur Backend / API Developer",
   company: "ADS Ltd",
-  period: "Mars 2025 - Août 2025",
+  period: "Mars 2025 - novembre 2025",
   location: "Douala, Cameroun",
   description: [
     "Conception et développement d’API sécurisées pour des compagnies d’assurance afin de gérer les données clients et les contrats.",
@@ -27,7 +27,7 @@ const experiences = [
   type: "work",
   role: "Développeur Frontend",
   company: "Unilym Service",
-  period: "Juin 2023 - Août 2023",
+  period: "Juin 2023 - Août 2024",
   location: "Mbouda, Cameroun",
   description: [
     "Développement du site web front-end pour Unilym Service en utilisant React et Tailwind CSS.",

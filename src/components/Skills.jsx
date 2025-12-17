@@ -12,7 +12,7 @@ const skills = [
   { icon: FaPython, name: "Python", level: "Avancé" },
   { icon: FaDatabase, name: "Django / FastAPI", level: "Avancé" },
   { icon: FaReact, name: "React", level: "Intermédiaire +" },
-  { icon: FaCss3Alt, name: "Tailwind CSS", level: "Avancé" },
+  { icon: FaCss3Alt, name: "Tailwind CSS", level: "Intermédiaire +" },
   { icon: FaDocker, name: "DevOps & Docker", level: "En progression" },
 ];
 

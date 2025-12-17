@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaBriefcase, FaCode } from "react-icons/fa";
-import heroImage from "../assets/tof.jpeg";
+import heroImage from "../assets/boris.png";
 
 const Hero = () => {
   return (
@@ -24,13 +24,13 @@ const Hero = () => {
 
           {/* TITLE */}
           <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
-            Je développe des <span className="text-purple-400">applications web fiables</span><br />
+            Je développe des <span className="text-purple-400">applications web robustes</span><br />
             prêtes pour la production
           </h1>
 
           {/* DESCRIPTION */}
           <p className="text-lg text-gray-300 mb-8 max-w-xl">
-            Je m’appelle <strong>Boris LONTSI</strong>, développeur Full-Stack spécialisé en  
+            Je m’appelle <strong>Boris LONTSIE</strong>, développeur Full-Stack spécialisé en  
             <strong> Python, Django et React</strong>.  
             J’ai <strong>1 an d’expérience</strong> pratique et <strong>6 projets concrets</strong> livrés,
             axés performance, sécurité et maintenabilité.

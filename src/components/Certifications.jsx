@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaCertificate, FaPython, FaDocker } from "react-icons/fa";
+import { FaCertificate, FaPython, FaReact } from "react-icons/fa";
 
 import pythonCert from "../assets/python.jpg";
 import devopsCert from "../assets/site.png";
@@ -15,11 +15,11 @@ const certifications = [
     image: pythonCert,
   },
   {
-    title: "Certification DevOps",
+    title: "Certification REACT JS",
     provider: "Coursera",
     description:
-      "Docker, CI/CD, bases AWS et déploiement d’applications scalables et sécurisées.",
-    icon: FaDocker,
+      "MAîtrise de la bibliothèque React JS pour le développement d’interfaces utilisateur dynamiques, Ergonomiques et responsives.",
+    icon: FaReact,
     image: devopsCert,
   },
 ];

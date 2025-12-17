@@ -67,7 +67,7 @@ const About = () => {
             </h3>
             <p className="text-gray-300 leading-relaxed">
               Spécialisé en <strong>Python</strong> (Django, FastAPI),
-              <strong> React</strong> et <strong>Tailwind CSS</strong>.
+              <strong> React, SQL(PostgreSQL)</strong> et <strong>Tailwind CSS</strong>.
               Je conçois des applications web performantes, maintenables
               et orientées utilisateur.
             </p>

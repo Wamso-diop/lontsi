@@ -4,7 +4,7 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 import pdfApp from "../assets/pdf.png";
 import messagingApp from "../assets/sms.jpg";
-import ecommerce from "../assets/pdf.png";
+import ecommerce from "../assets/lexora.png";
 import faceAttend from "../assets/face.jpg";
 
 const projects = [
@@ -13,7 +13,7 @@ const projects = [
     description:
       "Système intelligent de suivi de présence par reconnaissance faciale, orienté éducation.",
     tech: ["Python", "OpenCV", "FastAPI"],
-    github: "https://github.com/ton/repo-faceattend",
+    github: "https://github.com/Wamso-diop/faceattend",
     demo: null,
     image: faceAttend,
   },
@@ -22,7 +22,7 @@ const projects = [
     description:
       "Solution e-commerce complète avec panier dynamique, paiement sécurisé et gestion des commandes.",
     tech: ["Django", "React", "Stripe"],
-    github: "https://github.com/ton/repo-ecommerce",
+    github: "https://github.com/Wamso-diop/RADIOS",
     demo: null,
     image: ecommerce,
   },
@@ -41,7 +41,7 @@ const projects = [
     description:
       "Plateforme backend pour l’envoi de SMS et emails en temps réel avec authentification sécurisée.",
     tech: ["FastAPI", "Twilio", "JWT"],
-    github: "https://github.com/ton/repo-messages",
+    github: "https://github.com/Wamso-diop/ashtag",
     demo: null,
     image: messagingApp,
   },

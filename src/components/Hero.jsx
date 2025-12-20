@@ -1,6 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaBriefcase, FaCode } from "react-icons/fa";
+import { 
+  FaBriefcase, 
+  FaCode, 
+  FaGithub, 
+  FaLinkedin, 
+  FaFacebook,
+  FaTwitter 
+} from "react-icons/fa";
+
 import heroImage from "../assets/boris.png";
 
 const Hero = () => {
@@ -80,14 +88,60 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="relative flex justify-center"
         >
+          {/* Glow */}
           <div className="absolute -inset-6 bg-purple-600/30 blur-3xl rounded-full"></div>
 
-          <img
-            src={heroImage}
-            alt="Boris LONTSI – Développeur Full-Stack"
-            className="relative w-72 md:w-96 rounded-3xl shadow-2xl object-cover border-4 border-purple-500"
-          />
+          {/* Image wrapper */}
+          <div className="relative">
+            <img
+              src={heroImage}
+              alt="Boris LONTSIE – Développeur Full-Stack"
+              className="relative w-72 md:w-96 rounded-3xl shadow-2xl object-cover border-4 border-purple-500"
+            />
+
+            {/* SOCIAL ICONS */}
+            <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 flex flex-col gap-4">
+              
+              <a
+                href="https://github.com/wamso-diop"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-900 border border-purple-500 p-3 rounded-full text-purple-400 hover:bg-purple-600 hover:text-white transition"
+              >
+                <FaGithub size={18} />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/boris-lontsie-039742200/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-900 border border-purple-500 p-3 rounded-full text-purple-400 hover:bg-purple-600 hover:text-white transition"
+              >
+                <FaLinkedin size={18} />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/boris-lontsie-039742200/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-900 border border-purple-500 p-3 rounded-full text-purple-400 hover:bg-purple-600 hover:text-white transition"
+              >
+                <FaFacebook size={18} />
+              </a>
+
+              <a
+                href="https://twitter.com/BorisLontsi4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-900 border border-purple-500 p-3 rounded-full text-purple-400 hover:bg-purple-600 hover:text-white transition"
+              >
+                <FaTwitter size={18} />
+              </a>
+
+            </div>
+          </div>
         </motion.div>
+
       </div>
     </section>
   );

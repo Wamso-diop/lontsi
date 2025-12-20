@@ -13,7 +13,7 @@ const projects = [
     description:
       "Système intelligent de suivi de présence par reconnaissance faciale, orienté éducation.",
     tech: ["Python", "OpenCV", "FastAPI"],
-    github: "https://github.com/Wamso-diop/faceattend",
+    github: "https://github.com/Wamso-diop/faceID",
     demo: null,
     image: faceAttend,
   },

@@ -6,8 +6,17 @@ import pdfApp from "../assets/pdf.png";
 import messagingApp from "../assets/sms.jpg";
 import ecommerce from "../assets/lexora.png";
 import faceAttend from "../assets/face.jpg";
+import unitProject from "../assets/preview.png"
 
 const projects = [
+  {
+    title: "Plateforme Projets Universitaires",
+    description : "API de gestion de praojets étudiants — Université de Douala",
+    tech: ["Python", "JavaScrip", "FastApi"],
+    github : "https://github.com/Wamso-diop/uniProjet",
+    demo: "https://uniproject-alpha.vercel.app/",
+    image: unitProject,
+  },
   {
     title: "FaceAttend – Reconnaissance Faciale",
     description:

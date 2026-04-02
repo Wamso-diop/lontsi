@@ -8,6 +8,7 @@ import ecommerce from "../assets/lexora.png";
 import faceAttend from "../assets/face.jpg";
 import unitProject from "../assets/preview.png"
 import portfilio from "../assets/portfolio.png";
+import saleSystem from "../assets/SaleSystem.png";
 const projects = [
   {
     title: "Plateforme Projets Universitaires",
@@ -16,6 +17,16 @@ const projects = [
     github : "https://github.com/Wamso-diop/uniProjet",
     demo: "https://uniproject-alpha.vercel.app/",
     image: unitProject,
+  },
+  {
+    title: "Système de Vente en Ligne",
+    description:
+      "Système de vente en ligne avec gestion de produits, panier et paiement sécurisé.",
+    tech: ["Django", "React", "Stripe"],
+    github: "https://github.com/Wamso-diop/SaleSystem",
+    demo: "https://salesystem.vercel.app/",
+    image: saleSystem,
+
   },
   {
     title: "Portfolio Personnel",

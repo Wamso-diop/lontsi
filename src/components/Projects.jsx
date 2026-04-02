@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 import pdfApp from "../assets/pdf.png";
-import messagingApp from "../assets/sms.jpg";
+import messagingApp from "../assets/sms2.png";
 import ecommerce from "../assets/lexora.png";
 import faceAttend from "../assets/face.jpg";
 import unitProject from "../assets/preview.png"
@@ -61,7 +61,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="py-32 bg-gradient-to-b from-gray-900 to-gray-800"
+      className="py-16 md:py-32 bg-gradient-to-b from-gray-900 to-gray-800"
     >
       <div className="max-w-7xl mx-auto px-6">
 
@@ -71,12 +71,12 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-10 md:mb-20"
         >
           <span className="text-purple-400 uppercase tracking-widest text-sm font-semibold">
             Projets
           </span>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white mt-4">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-white mt-4">
             Projets concrets & solutions réelles
           </h2>
         </motion.div>

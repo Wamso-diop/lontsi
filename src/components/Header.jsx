@@ -1,24 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes, FaSun, FaMoon } from "react-icons/fa";
-import profile from "../assets/top.png";
+import profile from "../assets/boris.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState( () => localStorage.getItem("theme") === "dark");
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem("theme");
+    return saved ? saved === "dark" : true; // dark par défaut
+  });
 
-  const toggleTheme = () => {
-  const newTheme = darkMode ? "light" : "dark";
-  setDarkMode(!darkMode);
+  useEffect(() => {
+    const theme = darkMode ? "dark" : "light";
+    document.documentElement.classList.remove("light", "dark");
+    document.documentElement.classList.add(theme);
+    localStorage.setItem("theme", theme);
+  }, [darkMode]);
 
-  document.documentElement.classList.remove("light", "dark");
-  document.documentElement.classList.add(newTheme);
-
-  localStorage.setItem("theme", newTheme);
-};
-useEffect(() => {
-  const savedTheme = localStorage.getItem("theme") || "dark";
-  document.documentElement.classList.add(savedTheme);
-}, []);
+  const toggleTheme = () => setDarkMode((prev) => !prev);
 
 
   return (
@@ -57,31 +55,33 @@ useEffect(() => {
           </div>
 
           {/* RIGHT ACTIONS */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-3">
             <button
               onClick={toggleTheme}
-              className="
-                p-2 rounded-full
-                bg-gray-200 dark:bg-gray-800
-                text-yellow-500 dark:text-gray-200
-                hover:scale-110
-                transition-all duration-300
-              "
+              className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 text-yellow-500 dark:text-gray-200 hover:scale-110 transition-all duration-300"
             >
               {darkMode ? <FaSun /> : <FaMoon />}
             </button>
 
+            {/* HAMBURGER – mobile only */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden p-2 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:scale-110 transition-all duration-300"
+              aria-label="Menu"
+            >
+              {isOpen ? <FaTimes /> : <FaBars />}
+            </button>
           </div>
         </div>
 
         {/* MOBILE MENU */}
         {isOpen && (
-          <div className="md:hidden py-4 space-y-3">
-            {["about", "skills", "projects","certifications","experiences",  "contact"].map((item) => (
+          <div className="md:hidden py-4 border-t border-gray-200 dark:border-gray-700 space-y-1">
+            {["about", "skills", "projects", "certifications", "experiences", "contact"].map((item) => (
               <a
                 key={item}
                 href={`#${item}`}
-                className="block text-gray-700 dark:text-gray-300 hover:text-purple-500 transition"
+                className="block px-4 py-3 rounded-xl text-gray-700 dark:text-gray-300 hover:bg-purple-500/10 hover:text-purple-500 font-medium transition"
                 onClick={() => setIsOpen(false)}
               >
                 {item.charAt(0).toUpperCase() + item.slice(1)}

@@ -20,7 +20,7 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="py-28 bg-gradient-to-b from-gray-800 to-gray-900"
+      className="py-16 md:py-28 bg-gradient-to-b from-gray-800 to-gray-900"
     >
       <div className="max-w-7xl mx-auto px-6">
 
@@ -30,12 +30,12 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-10 md:mb-20"
         >
           <span className="text-purple-400 uppercase tracking-widest text-sm font-semibold">
             Compétences techniques
           </span>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white mt-4">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-white mt-4">
             Technologies que j’utilise au quotidien
           </h2>
         </motion.div>

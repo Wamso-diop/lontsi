@@ -30,7 +30,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-32 bg-gradient-to-b from-gray-900 to-black"
+      className="py-16 md:py-32 bg-gradient-to-b from-gray-900 to-black"
     >
       <div className="max-w-7xl mx-auto px-6">
 
@@ -40,12 +40,12 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-10 md:mb-20"
         >
           <span className="text-purple-400 uppercase tracking-widest text-sm font-semibold">
             Contact professionnel
           </span>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white mt-4">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-white mt-4">
             Intéressé par mon profil ?
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto mt-6">

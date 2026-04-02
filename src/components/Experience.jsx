@@ -97,18 +97,18 @@ const education = [
 
 const ExperienceTimeline = () => {
   return (
-    <section className="py-32 bg-gray-900 text-gray-200" id="experiences">
+    <section className="py-16 md:py-32 bg-gray-900 text-gray-200" id="experiences">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-10 md:mb-20"
         >
           <span className="text-purple-400 uppercase text-sm tracking-widest font-semibold">
             Timeline
           </span>
-        <h2 className="text-4xl md:text-5xl font-extrabold text-white mt-4 flex items-center justify-center gap-4">
+        <h2 className="text-3xl md:text-5xl font-extrabold text-white mt-4 flex flex-wrap items-center justify-center gap-3 md:gap-4">
           <FaGraduationCap className="text-purple-400 w-10 h-10" />
           Formations
           <span className="text-gray-400 mx-2">|</span>
@@ -117,59 +117,80 @@ const ExperienceTimeline = () => {
         </h2>
         </motion.div>
 
-        <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Ligne centrale */}
+        {/* DESKTOP: 2 colonnes avec ligne centrale */}
+        <div className="hidden md:grid relative grid-cols-2 gap-12">
           <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-purple-400 h-full"></div>
 
-          {/* Formations */}
-          <div className="md:col-start-1">
+          <div className="col-start-1">
             {education.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+              <motion.div key={i} initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="relative bg-gray-800/60 backdrop-blur-xl border border-gray-700 rounded-2xl p-6 mb-12"
-              >
-                <div className="absolute top-6 -left-6 md:-left-8 md:top-8 w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white text-xl">
+                className="relative bg-gray-800/60 backdrop-blur-xl border border-gray-700 rounded-2xl p-6 mb-12 pl-10">
+                <div className="absolute top-8 -left-8 w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white text-xl">
                   <FaGraduationCap />
                 </div>
-                <h3 className="text-2xl font-bold">{item.degree}</h3>
+                <h3 className="text-xl font-bold">{item.degree}</h3>
                 <p className="text-purple-400 font-medium">{item.school}</p>
                 <p className="text-gray-400 text-sm mt-1 mb-3">{item.period} • {item.location}</p>
                 <ul className="list-disc list-inside space-y-1">
-                  {item.description.map((desc, idx) => (
-                    <li key={idx} className="text-gray-300">{desc}</li>
-                  ))}
+                  {item.description.map((desc, idx) => <li key={idx} className="text-gray-300">{desc}</li>)}
                 </ul>
               </motion.div>
             ))}
           </div>
 
-          {/* Expériences */}
-          <div className="md:col-start-2">
+          <div className="col-start-2">
             {experiences.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+              <motion.div key={i} initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="relative bg-gray-800/60 backdrop-blur-xl border border-gray-700 rounded-2xl p-6 mb-12"
-              >
-                <div className="absolute top-6 -left-6 md:-left-8 md:top-8 w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white text-xl">
+                className="relative bg-gray-800/60 backdrop-blur-xl border border-gray-700 rounded-2xl p-6 mb-12 pl-10">
+                <div className="absolute top-8 -left-8 w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white text-xl">
                   <FaBriefcase />
                 </div>
-                <h3 className="text-2xl font-bold">{item.role}</h3>
+                <h3 className="text-xl font-bold">{item.role}</h3>
                 <p className="text-purple-400 font-medium">{item.company}</p>
                 <p className="text-gray-400 text-sm mt-1 mb-3">{item.period} • {item.location}</p>
                 <ul className="list-disc list-inside space-y-1">
-                  {item.description.map((desc, idx) => (
-                    <li key={idx} className="text-gray-300">{desc}</li>
-                  ))}
+                  {item.description.map((desc, idx) => <li key={idx} className="text-gray-300">{desc}</li>)}
                 </ul>
               </motion.div>
             ))}
           </div>
+        </div>
+
+        {/* MOBILE: colonne unique avec ligne gauche */}
+        <div className="md:hidden flex flex-col gap-6">
+          <h3 className="text-lg font-bold text-purple-400 uppercase tracking-widest flex items-center gap-2">
+            <FaGraduationCap /> Formations
+          </h3>
+          {education.map((item, i) => (
+            <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="bg-gray-800/60 border border-gray-700 rounded-2xl p-5 border-l-4 border-l-purple-500">
+              <h4 className="text-base font-bold text-white">{item.degree}</h4>
+              <p className="text-purple-400 text-sm font-medium">{item.school}</p>
+              <p className="text-gray-400 text-xs mt-1 mb-2">{item.period} • {item.location}</p>
+              <ul className="list-disc list-inside space-y-1">
+                {item.description.map((desc, idx) => <li key={idx} className="text-gray-300 text-sm">{desc}</li>)}
+              </ul>
+            </motion.div>
+          ))}
+
+          <h3 className="text-lg font-bold text-purple-400 uppercase tracking-widest flex items-center gap-2 mt-4">
+            <FaBriefcase /> Expériences
+          </h3>
+          {experiences.map((item, i) => (
+            <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="bg-gray-800/60 border border-gray-700 rounded-2xl p-5 border-l-4 border-l-purple-500">
+              <h4 className="text-base font-bold text-white">{item.role}</h4>
+              <p className="text-purple-400 text-sm font-medium">{item.company}</p>
+              <p className="text-gray-400 text-xs mt-1 mb-2">{item.period} • {item.location}</p>
+              <ul className="list-disc list-inside space-y-1">
+                {item.description.map((desc, idx) => <li key={idx} className="text-gray-300 text-sm">{desc}</li>)}
+              </ul>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

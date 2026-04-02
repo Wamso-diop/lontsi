@@ -1,4 +1,8 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
 html, body {
   overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
 }

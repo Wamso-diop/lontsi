@@ -6,7 +6,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="py-28 bg-gradient-to-b from-gray-900 to-gray-800"
+      className="py-16 md:py-28 bg-gradient-to-b from-gray-900 to-gray-800"
     >
       <div className="max-w-7xl mx-auto px-6">
 
@@ -16,12 +16,12 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-10 md:mb-20"
         >
           <span className="text-purple-400 uppercase tracking-widest text-sm font-semibold">
             À propos
           </span>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white mt-4">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-white mt-4">
             Ingénieur logiciel en formation, développeur en action
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto mt-6">

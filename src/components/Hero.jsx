@@ -15,9 +15,9 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center bg-gradient-to-br from-purple-900 via-gray-900 to-black pt-28 overflow-x-hidden"
+      className="min-h-screen flex items-center bg-gradient-to-br from-purple-900 via-gray-900 to-black pt-20 md:pt-28 overflow-x-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 items-center py-8 md:py-0">
 
         {/* TEXT */}
         <motion.div
@@ -31,13 +31,13 @@ const Hero = () => {
           </span>
 
           {/* TITLE */}
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
-            Je développe des <span className="text-purple-400">applications web robustes</span><br />
+          <h1 className="text-3xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+            Je développe des <span className="text-purple-400">applications web robustes</span>{" "}
             prêtes pour la production
           </h1>
 
           {/* DESCRIPTION */}
-          <p className="text-lg text-gray-300 mb-8 max-w-xl">
+          <p className="text-base md:text-lg text-gray-300 mb-8 max-w-xl">
             Je m’appelle <strong>Boris LONTSIE</strong>, développeur Full-Stack spécialisé en  
             <strong> Python, Django et React</strong>.  
             J’ai <strong>1 an d’expérience</strong> pratique et <strong>6 projets concrets</strong> livrés,
@@ -45,7 +45,7 @@ const Hero = () => {
           </p>
 
           {/* STATS */}
-          <div className="flex flex-wrap gap-6 mb-10">
+          <div className="flex flex-wrap gap-3 md:gap-6 mb-8 md:mb-10">
             <div className="flex items-center gap-3 bg-gray-800/60 px-5 py-3 rounded-xl border border-white/5">
               <FaBriefcase className="text-purple-400" />
               <span className="text-white font-semibold">
@@ -86,59 +86,57 @@ const Hero = () => {
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative flex justify-center"
+          className="relative flex flex-col items-center gap-6"
         >
-          {/* Glow */}
-          <div className="absolute -inset-6 bg-purple-600/30 blur-3xl rounded-full"></div>
-
-          {/* Image wrapper */}
           <div className="relative">
+            {/* Glow */}
+            <div className="absolute -inset-6 bg-purple-600/30 blur-3xl rounded-full"></div>
+
             <img
               src={heroImage}
               alt="Boris LONTSIE – Développeur Full-Stack"
-              className="relative w-72 md:w-96 rounded-3xl shadow-2xl object-cover border-4 border-purple-500"
+              className="relative w-56 md:w-96 rounded-3xl shadow-2xl object-cover border-4 border-purple-500"
             />
 
-            {/* SOCIAL ICONS */}
-            <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 flex flex-col gap-4">
-              
-              <a
-                href="https://github.com/wamso-diop"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-900 border border-purple-500 p-3 rounded-full text-purple-400 hover:bg-purple-600 hover:text-white transition"
-              >
+            {/* SOCIAL ICONS – desktop: floating right side */}
+            <div className="hidden md:flex absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 flex-col gap-4">
+              <a href="https://github.com/wamso-diop" target="_blank" rel="noopener noreferrer"
+                className="bg-gray-900 border border-purple-500 p-3 rounded-full text-purple-400 hover:bg-purple-600 hover:text-white transition">
                 <FaGithub size={18} />
               </a>
-
-              <a
-                href="https://www.linkedin.com/in/boris-lontsie-039742200/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-900 border border-purple-500 p-3 rounded-full text-purple-400 hover:bg-purple-600 hover:text-white transition"
-              >
+              <a href="https://www.linkedin.com/in/boris-lontsie-039742200/" target="_blank" rel="noopener noreferrer"
+                className="bg-gray-900 border border-purple-500 p-3 rounded-full text-purple-400 hover:bg-purple-600 hover:text-white transition">
                 <FaLinkedin size={18} />
               </a>
-
-              <a
-                href="https://www.linkedin.com/in/boris-lontsie-039742200/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-900 border border-purple-500 p-3 rounded-full text-purple-400 hover:bg-purple-600 hover:text-white transition"
-              >
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
+                className="bg-gray-900 border border-purple-500 p-3 rounded-full text-purple-400 hover:bg-purple-600 hover:text-white transition">
                 <FaFacebook size={18} />
               </a>
-
-              <a
-                href="https://twitter.com/BorisLontsi4"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-900 border border-purple-500 p-3 rounded-full text-purple-400 hover:bg-purple-600 hover:text-white transition"
-              >
+              <a href="https://twitter.com/BorisLontsi4" target="_blank" rel="noopener noreferrer"
+                className="bg-gray-900 border border-purple-500 p-3 rounded-full text-purple-400 hover:bg-purple-600 hover:text-white transition">
                 <FaTwitter size={18} />
               </a>
-
             </div>
+          </div>
+
+          {/* SOCIAL ICONS – mobile: horizontal row below image */}
+          <div className="flex md:hidden gap-4">
+            <a href="https://github.com/wamso-diop" target="_blank" rel="noopener noreferrer"
+              className="bg-gray-900 border border-purple-500 p-3 rounded-full text-purple-400 hover:bg-purple-600 hover:text-white transition">
+              <FaGithub size={20} />
+            </a>
+            <a href="https://www.linkedin.com/in/boris-lontsie-039742200/" target="_blank" rel="noopener noreferrer"
+              className="bg-gray-900 border border-purple-500 p-3 rounded-full text-purple-400 hover:bg-purple-600 hover:text-white transition">
+              <FaLinkedin size={20} />
+            </a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
+              className="bg-gray-900 border border-purple-500 p-3 rounded-full text-purple-400 hover:bg-purple-600 hover:text-white transition">
+              <FaFacebook size={20} />
+            </a>
+            <a href="https://twitter.com/BorisLontsi4" target="_blank" rel="noopener noreferrer"
+              className="bg-gray-900 border border-purple-500 p-3 rounded-full text-purple-400 hover:bg-purple-600 hover:text-white transition">
+              <FaTwitter size={20} />
+            </a>
           </div>
         </motion.div>
 

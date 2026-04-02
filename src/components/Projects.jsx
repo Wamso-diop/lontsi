@@ -7,7 +7,7 @@ import messagingApp from "../assets/sms2.png";
 import ecommerce from "../assets/lexora.png";
 import faceAttend from "../assets/face.jpg";
 import unitProject from "../assets/preview.png"
-
+import portfilio from "../assets/portfolio.png";
 const projects = [
   {
     title: "Plateforme Projets Universitaires",
@@ -16,6 +16,15 @@ const projects = [
     github : "https://github.com/Wamso-diop/uniProjet",
     demo: "https://uniproject-alpha.vercel.app/",
     image: unitProject,
+  },
+  {
+    title: "Portfolio Personnel",
+    description:
+      "Mon portfolio personnel, conçu pour présenter mes compétences, projets et expériences de manière professionnelle et attrayante.",
+    tech: ["React", "Tailwind CSS", "Framer Motion"],
+    github: "https://github.com/Wamso-diop/lontsi",
+    demo: "https://lontsi.vercel.app/",
+    image: portfilio,
   },
   {
     title: "FaceAttend – Reconnaissance Faciale",

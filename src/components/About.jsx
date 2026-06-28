@@ -1,97 +1,90 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { FaCode, FaRocket, FaGraduationCap } from "react-icons/fa";
+import { Code2, Layers, GraduationCap, Rocket, ArrowUpRight } from "lucide-react";
+
+const services = [
+  {
+    icon: Code2,
+    title: "Développement Web",
+    description:
+      "Applications web complètes avec Python (Django, FastAPI) côté serveur et React côté client. Architecture solide, code propre et performant.",
+  },
+  {
+    icon: Layers,
+    title: "Architecture Backend",
+    description:
+      "Conception d'API RESTful sécurisées, bases de données PostgreSQL optimisées, authentification JWT et intégration de services tiers.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Ingénierie Logicielle",
+    description:
+      "Formation en Génie Logiciel (GL4) à l'ENSPD. Bases solides en algorithmique, architecture logicielle et ingénierie des systèmes.",
+  },
+  {
+    icon: Rocket,
+    title: "DevOps & Déploiement",
+    description:
+      "En montée de compétence sur Docker, CI/CD et le cloud. Objectif : livrer des solutions fiables, scalables et prêtes pour la production.",
+  },
+];
 
 const About = () => {
   return (
-    <section
-      id="about"
-      className="py-16 md:py-28 bg-gradient-to-b from-gray-900 to-gray-800"
-    >
+    <section id="about" className="relative py-24 lg:py-32 bg-[#0c0a2e]">
+      <div className="absolute top-0 left-0 right-0 section-divider" />
+
       <div className="max-w-7xl mx-auto px-6">
-
-        {/* TITLE */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="text-center mb-10 md:mb-20"
-        >
-          <span className="text-purple-400 uppercase tracking-widest text-sm font-semibold">
-            À propos
-          </span>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-white mt-4">
-            Ingénieur logiciel en formation, développeur en action
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto mt-6">
-            Je combine une formation académique exigeante et une pratique terrain
-            orientée résultats.
-          </p>
-        </motion.div>
-
-        {/* CONTENT */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-
-          {/* CARD 1 – FORMATION */}
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 lg:mb-20 gap-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
             viewport={{ once: true }}
-            className="bg-gray-800/60 backdrop-blur-xl border border-gray-700 rounded-2xl p-8 text-center hover:border-purple-500 transition"
+            transition={{ duration: 0.6 }}
+            className="max-w-2xl"
           >
-            <FaGraduationCap className="text-purple-400 text-4xl mx-auto mb-6" />
-            <h3 className="text-xl font-semibold text-white mb-3">
-              Formation académique
-            </h3>
-            <p className="text-gray-300 leading-relaxed">
-              Étudiant en <strong>Génie Logiciel 4</strong> à l’
-              <strong> École Nationale Polytechnique de Douala</strong>.
-              Je développe une base solide en algorithmique, architecture logicielle
-              et ingénierie des systèmes.
+            <span className="text-[#ff6b00] text-xs font-semibold uppercase tracking-[0.2em]">
+              À propos
+            </span>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-4 leading-tight">
+              Ingénieur en formation,{" "}
+              <span className="gradient-text-warm">développeur en action</span>
+            </h2>
+            <p className="text-gray-400 mt-6 text-lg leading-relaxed">
+              Je combine une formation académique exigeante à l'ENSPD et une pratique
+              terrain orientée résultats. Chaque projet est une occasion de livrer de la
+              valeur concrète.
             </p>
           </motion.div>
+        </div>
 
-          {/* CARD 2 – STACK */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            viewport={{ once: true }}
-            className="bg-gray-800/60 backdrop-blur-xl border border-gray-700 rounded-2xl p-8 text-center hover:border-purple-500 transition"
-          >
-            <FaCode className="text-purple-400 text-4xl mx-auto mb-6" />
-            <h3 className="text-xl font-semibold text-white mb-3">
-              Développement logiciel
-            </h3>
-            <p className="text-gray-300 leading-relaxed">
-              Spécialisé en <strong>Python</strong> (Django, FastAPI),
-              <strong> React, SQL(PostgreSQL)</strong> et <strong>Tailwind CSS</strong>.
-              Je conçois des applications web performantes, maintenables
-              et orientées utilisateur.
-            </p>
-          </motion.div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {services.map((service, i) => (
+            <motion.div
+              key={service.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="group glass-card p-7 hover:border-[#ff6b00]/20"
+            >
+              <div className="flex items-center justify-between mb-8">
+                <div className="w-12 h-12 rounded-xl bg-[#ff6b00]/10 flex items-center justify-center">
+                  <service.icon className="w-6 h-6 text-[#ff6b00]" />
+                </div>
+                <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-[#ff6b00] transition-colors duration-300">
+                  <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
+                </div>
+              </div>
 
-          {/* CARD 3 – VISION */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            viewport={{ once: true }}
-            className="bg-gray-800/60 backdrop-blur-xl border border-gray-700 rounded-2xl p-8 text-center hover:border-purple-500 transition"
-          >
-            <FaRocket className="text-purple-400 text-4xl mx-auto mb-6" />
-            <h3 className="text-xl font-semibold text-white mb-3">
-              Vision & professionnalisation
-            </h3>
-            <p className="text-gray-300 leading-relaxed">
-              En montée de compétence sur le <strong>DevOps</strong>, la sécurité
-              et le déploiement cloud afin de livrer des solutions fiables,
-              scalables et prêtes pour la production.
-            </p>
-          </motion.div>
+              <h3 className="font-display text-lg font-bold text-white mb-3">
+                {service.title}
+              </h3>
 
+              <p className="text-sm text-gray-400 leading-relaxed">
+                {service.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

@@ -1,69 +1,110 @@
-import React from "react";
 import { motion } from "framer-motion";
 import {
-  FaPython,
-  FaReact,
-  FaDatabase,
-  FaDocker,
-  FaCss3Alt,
+  FaPython, FaReact, FaDocker, FaGitAlt, FaDatabase,
 } from "react-icons/fa";
+import {
+  SiDjango, SiFastapi, SiTailwindcss, SiPostgresql, SiJavascript,
+} from "react-icons/si";
 
-const skills = [
-  { icon: FaPython, name: "Python", level: "Avancé" },
-  { icon: FaDatabase, name: "Django / FastAPI", level: "Avancé" },
-  { icon: FaReact, name: "React", level: "Intermédiaire +" },
-  { icon: FaCss3Alt, name: "Tailwind CSS", level: "Intermédiaire +" },
-  { icon: FaDocker, name: "DevOps & Docker", level: "En progression" },
+const skillCategories = [
+  {
+    title: "Backend",
+    skills: [
+      { name: "Python", icon: FaPython, level: 90 },
+      { name: "Django", icon: SiDjango, level: 85 },
+      { name: "FastAPI", icon: SiFastapi, level: 85 },
+      { name: "PostgreSQL", icon: SiPostgresql, level: 75 },
+    ],
+  },
+  {
+    title: "Frontend",
+    skills: [
+      { name: "React", icon: FaReact, level: 80 },
+      { name: "JavaScript", icon: SiJavascript, level: 80 },
+      { name: "Tailwind CSS", icon: SiTailwindcss, level: 85 },
+    ],
+  },
+  {
+    title: "Outils & DevOps",
+    skills: [
+      { name: "Git", icon: FaGitAlt, level: 80 },
+      { name: "Docker", icon: FaDocker, level: 55 },
+      { name: "Bases de données", icon: FaDatabase, level: 75 },
+    ],
+  },
 ];
+
+const SkillBar = ({ level, delay }) => (
+  <div className="w-full h-1.5 rounded-full bg-white/5 overflow-hidden">
+    <motion.div
+      initial={{ width: 0 }}
+      whileInView={{ width: `${level}%` }}
+      viewport={{ once: true }}
+      transition={{ duration: 1, delay, ease: "easeOut" }}
+      className="h-full rounded-full bg-gradient-to-r from-[#ff6b00] to-[#7c3aed]"
+    />
+  </div>
+);
 
 const Skills = () => {
   return (
-    <section
-      id="skills"
-      className="py-16 md:py-28 bg-gradient-to-b from-gray-800 to-gray-900"
-    >
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="skills" className="relative py-24 lg:py-32 bg-[#0c0a2e]">
+      <div className="absolute top-0 left-0 right-0 section-divider" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#ff6b00]/3 rounded-full blur-[200px]" />
 
-        {/* TITLE */}
+      <div className="relative max-w-7xl mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-10 md:mb-20"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16 lg:mb-20"
         >
-          <span className="text-purple-400 uppercase tracking-widest text-sm font-semibold">
-            Compétences techniques
+          <span className="text-[#ff6b00] text-xs font-semibold uppercase tracking-[0.2em]">
+            Compétences
           </span>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-white mt-4">
-            Technologies que j’utilise au quotidien
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-4">
+            Technologies que j'utilise{" "}
+            <span className="gradient-text-warm">au quotidien</span>
           </h2>
         </motion.div>
 
-        {/* SKILLS GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-
-          {skills.map((skill, index) => (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {skillCategories.map((category, catIdx) => (
             <motion.div
-              key={skill.name}
+              key={category.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group bg-gray-800/60 backdrop-blur-xl border border-gray-700 rounded-2xl p-8 text-center hover:border-purple-500 transition"
+              transition={{ duration: 0.5, delay: catIdx * 0.15 }}
+              className="glass-card p-8"
             >
-              {/* ICON */}
-              <skill.icon className="text-5xl text-purple-400 mx-auto mb-6 group-hover:scale-110 transition" />
-
-              {/* NAME */}
-              <h3 className="text-xl font-semibold text-white mb-2">
-                {skill.name}
+              <h3 className="text-lg font-semibold text-white mb-8 flex items-center gap-3">
+                <span className="w-8 h-[2px] bg-gradient-to-r from-[#ff6b00] to-[#7c3aed] rounded-full" />
+                {category.title}
               </h3>
 
-              {/* LEVEL */}
-              <span className="inline-block mt-2 px-4 py-1 text-xs font-semibold rounded-full bg-purple-600/20 text-purple-400">
-                {skill.level}
-              </span>
+              <div className="space-y-6">
+                {category.skills.map((skill, skillIdx) => (
+                  <div key={skill.name}>
+                    <div className="flex items-center justify-between mb-2.5">
+                      <div className="flex items-center gap-3">
+                        <skill.icon className="w-5 h-5 text-[#ff6b00]" />
+                        <span className="text-sm text-gray-300 font-medium">
+                          {skill.name}
+                        </span>
+                      </div>
+                      <span className="text-xs text-gray-500 font-mono">
+                        {skill.level}%
+                      </span>
+                    </div>
+                    <SkillBar
+                      level={skill.level}
+                      delay={catIdx * 0.15 + skillIdx * 0.08}
+                    />
+                  </div>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>

@@ -1,8 +1,97 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Poppins', system-ui, sans-serif;
+  --color-navy: #0c0a2e;
+  --color-navy-light: #110f3a;
+  --color-orange: #ff6b00;
+  --color-orange-hover: #e85d00;
+  --color-blue-logo: #1a1aff;
+  --color-cream: #f8f6f3;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
   overflow-x: hidden;
-  scroll-behavior: smooth;
   -webkit-tap-highlight-color: transparent;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(255, 107, 0, 0.3);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0c0a2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff6b00, #1a1aff);
+  border-radius: 10px;
+}
+
+.font-display {
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+
+.gradient-text-warm {
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 40%, #ff6b00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 107, 0, 0.2);
+  transform: translateY(-4px);
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 107, 0, 0.2), transparent);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes float-delayed {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+.animate-float { animation: float 8s ease-in-out infinite; }
+.animate-float-delayed { animation: float-delayed 10s ease-in-out infinite; }
+.animate-pulse-soft { animation: pulse-soft 5s ease-in-out infinite; }
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: rgba(255, 107, 0, 0.5) !important;
+  box-shadow: 0 0 20px rgba(255, 107, 0, 0.1);
 }

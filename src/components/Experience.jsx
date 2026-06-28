@@ -1,200 +1,183 @@
-import React from "react";
-import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
 import { motion } from "framer-motion";
-
-/* ============================
-   EXPÉRIENCES PROFESSIONNELLES
-   ============================ */
+import { Briefcase, GraduationCap, MapPin } from "lucide-react";
 
 const experiences = [
   {
-  type: "work",
-  role: "Développeur Backend / API Developer",
-  company: "ADS Ltd",
-  period: "Mars 2025 - novembre 2025",
-  location: "Douala, Cameroun",
-  description: [
-    "Conception et développement d’API sécurisées pour des compagnies d’assurance afin de gérer les données clients et les contrats.",
-    "Mise en place de l’architecture backend avec Django et FastAPI pour assurer scalabilité et performance.",
-    "Intégration de systèmes d’authentification et autorisation pour sécuriser les échanges entre les services.",
-    "Collaboration avec les équipes front-end et produit pour garantir la cohérence des flux de données et l’expérience utilisateur.",
-    "Optimisation des requêtes et des endpoints pour réduire le temps de réponse et améliorer la fiabilité de l’application."
-  ],
-},
-
-
+    type: "work",
+    role: "Développeur Backend / API Developer",
+    company: "ADS Ltd",
+    period: "Mars 2025 – Nov. 2025",
+    location: "Douala, Cameroun",
+    description: [
+      "Conception et développement d'API sécurisées pour des compagnies d'assurance",
+      "Architecture backend avec Django et FastAPI pour scalabilité et performance",
+      "Intégration de systèmes d'authentification et autorisation",
+      "Optimisation des requêtes et endpoints pour réduire les temps de réponse",
+    ],
+  },
   {
-  type: "work",
-  role: "Développeur Frontend",
-  company: "Unilym Service",
-  period: "Juin 2023 - Août 2024",
-  location: "Mbouda, Cameroun",
-  description: [
-    "Développement du site web front-end pour Unilym Service en utilisant React et Tailwind CSS.",
-    "Création d’interfaces utilisateurs responsives et modernes pour améliorer l’expérience client.",
-    "Intégration des composants interactifs et optimisation de la navigation pour une meilleure fluidité.",
-    "Collaboration avec le client pour comprendre les besoins et adapter le design aux exigences métier.",
-    "Mise en place de bonnes pratiques de performance et d’accessibilité sur toutes les pages."
-  ],
-}
-
+    type: "work",
+    role: "Développeur Frontend",
+    company: "Unilym Service",
+    period: "Juin 2023 – Août 2024",
+    location: "Mbouda, Cameroun",
+    description: [
+      "Développement du site web avec React et Tailwind CSS",
+      "Création d'interfaces utilisateurs responsives et modernes",
+      "Intégration des composants interactifs et optimisation de la navigation",
+      "Mise en place de bonnes pratiques de performance et d'accessibilité",
+    ],
+  },
 ];
-
-
-/* ======================
-   PARCOURS ACADÉMIQUE
-   ====================== */
 
 const education = [
   {
-    type: "education",
-    degree: "Diplôme d’Ingénieur en Génie Logiciel",
+    degree: "Diplôme d'Ingénieur en Génie Logiciel",
     school: "École Nationale Polytechnique de Douala",
     period: "2027 (prévu)",
     location: "Douala, Cameroun",
-    description: [
-      "Formation avancée en génie logiciel",
-      "Conception, développement et maintenance de systèmes informatiques complexes",
-    ],
+    highlights: ["Génie logiciel", "Architecture & Systèmes"],
   },
-    {
-    type: "education",
+  {
     degree: "Bac +1 en Informatique",
     school: "Université de Yaoundé 1",
     period: "2021",
     location: "Yaoundé, Cameroun",
-    description: [
-      "Cours fondamentaux en systèmes d’exploitation",
-      "Introduction aux réseaux informatiques et à l’algorithmique",
-    ],
+    highlights: ["Systèmes d'exploitation", "Réseaux & Algorithmique"],
   },
   {
-    // Type d’entrée : formation académique
-    type: "education",
-
-    // Diplôme obtenu
-    degree: "Baccalauréat en Technologie de l’Informatique",
-
-    // Établissement
+    degree: "Baccalauréat en Technologie de l'Informatique",
     school: "Lycée Bilingue de Mbouda",
-
-    // Année d’obtention
     period: "2020",
-
-    // Lieu
     location: "Mbouda, Cameroun",
-
-    // Contenu et compétences acquises
-    description: [
-      "Formation générale en informatique et technologies",
-      "Bases solides en programmation, réseaux et systèmes informatiques",
-    ],
+    highlights: ["Programmation", "Réseaux & Systèmes"],
   },
-
-
 ];
 
-
-const ExperienceTimeline = () => {
+const Experience = () => {
   return (
-    <section className="py-16 md:py-32 bg-gray-900 text-gray-200" id="experiences">
+    <section id="experiences" className="relative py-24 lg:py-32 bg-[#0c0a2e]">
+      <div className="absolute top-0 left-0 right-0 section-divider" />
+
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-10 md:mb-20"
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16 lg:mb-20"
         >
-          <span className="text-purple-400 uppercase text-sm tracking-widest font-semibold">
-            Timeline
+          <span className="text-[#ff6b00] text-xs font-semibold uppercase tracking-[0.2em]">
+            Parcours
           </span>
-        <h2 className="text-3xl md:text-5xl font-extrabold text-white mt-4 flex flex-wrap items-center justify-center gap-3 md:gap-4">
-          <FaGraduationCap className="text-purple-400 w-10 h-10" />
-          Formations
-          <span className="text-gray-400 mx-2">|</span>
-          <FaBriefcase className="text-purple-400 w-10 h-10" />
-          Expériences
-        </h2>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-4">
+            Expérience &{" "}
+            <span className="gradient-text-warm">Formation</span>
+          </h2>
         </motion.div>
 
-        {/* DESKTOP: 2 colonnes avec ligne centrale */}
-        <div className="hidden md:grid relative grid-cols-2 gap-12">
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-purple-400 h-full"></div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-10 h-10 rounded-xl bg-[#ff6b00]/10 flex items-center justify-center">
+                <Briefcase className="w-5 h-5 text-[#ff6b00]" />
+              </div>
+              <h3 className="font-display text-xl font-bold text-white">Expérience</h3>
+            </div>
 
-          <div className="col-start-1">
-            {education.map((item, i) => (
-              <motion.div key={i} initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="relative bg-gray-800/60 backdrop-blur-xl border border-gray-700 rounded-2xl p-6 mb-12 pl-10">
-                <div className="absolute top-8 -left-8 w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white text-xl">
-                  <FaGraduationCap />
-                </div>
-                <h3 className="text-xl font-bold">{item.degree}</h3>
-                <p className="text-purple-400 font-medium">{item.school}</p>
-                <p className="text-gray-400 text-sm mt-1 mb-3">{item.period} • {item.location}</p>
-                <ul className="list-disc list-inside space-y-1">
-                  {item.description.map((desc, idx) => <li key={idx} className="text-gray-300">{desc}</li>)}
-                </ul>
-              </motion.div>
-            ))}
+            <div className="relative pl-8 border-l border-white/10">
+              {experiences.map((exp, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.15 }}
+                  className="relative mb-10 last:mb-0"
+                >
+                  <div className="absolute -left-[calc(2rem+5px)] top-1 w-2.5 h-2.5 rounded-full bg-[#ff6b00] ring-4 ring-[#0c0a2e]" />
+
+                  <div className="glass-card p-6 lg:p-8">
+                    <div className="flex flex-wrap items-center gap-3 mb-3">
+                      <span className="px-3 py-1 rounded-full bg-[#ff6b00]/10 text-[#ff6b00] text-xs font-medium">
+                        {exp.period}
+                      </span>
+                      <span className="flex items-center gap-1 text-xs text-gray-500">
+                        <MapPin className="w-3 h-3" />
+                        {exp.location}
+                      </span>
+                    </div>
+
+                    <h4 className="text-lg font-semibold text-white mb-1">{exp.role}</h4>
+                    <p className="text-[#ff6b00] text-sm font-medium mb-4">{exp.company}</p>
+
+                    <ul className="space-y-2">
+                      {exp.description.map((desc, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-sm text-gray-400">
+                          <span className="w-1 h-1 rounded-full bg-[#ff6b00] mt-2 shrink-0" />
+                          {desc}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
 
-          <div className="col-start-2">
-            {experiences.map((item, i) => (
-              <motion.div key={i} initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="relative bg-gray-800/60 backdrop-blur-xl border border-gray-700 rounded-2xl p-6 mb-12 pl-10">
-                <div className="absolute top-8 -left-8 w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white text-xl">
-                  <FaBriefcase />
-                </div>
-                <h3 className="text-xl font-bold">{item.role}</h3>
-                <p className="text-purple-400 font-medium">{item.company}</p>
-                <p className="text-gray-400 text-sm mt-1 mb-3">{item.period} • {item.location}</p>
-                <ul className="list-disc list-inside space-y-1">
-                  {item.description.map((desc, idx) => <li key={idx} className="text-gray-300">{desc}</li>)}
-                </ul>
-              </motion.div>
-            ))}
+          <div>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-10 h-10 rounded-xl bg-[#7c3aed]/10 flex items-center justify-center">
+                <GraduationCap className="w-5 h-5 text-[#7c3aed]" />
+              </div>
+              <h3 className="font-display text-xl font-bold text-white">Formation</h3>
+            </div>
+
+            <div className="relative pl-8 border-l border-white/10">
+              {education.map((edu, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.15 }}
+                  className="relative mb-10 last:mb-0"
+                >
+                  <div className="absolute -left-[calc(2rem+5px)] top-1 w-2.5 h-2.5 rounded-full bg-[#7c3aed] ring-4 ring-[#0c0a2e]" />
+
+                  <div className="glass-card p-6 lg:p-8">
+                    <div className="flex flex-wrap items-center gap-3 mb-3">
+                      <span className="px-3 py-1 rounded-full bg-[#7c3aed]/10 text-[#7c3aed] text-xs font-medium">
+                        {edu.period}
+                      </span>
+                      <span className="flex items-center gap-1 text-xs text-gray-500">
+                        <MapPin className="w-3 h-3" />
+                        {edu.location}
+                      </span>
+                    </div>
+
+                    <h4 className="text-lg font-semibold text-white mb-1">{edu.degree}</h4>
+                    <p className="text-[#7c3aed] text-sm font-medium mb-4">{edu.school}</p>
+
+                    <div className="flex flex-wrap gap-2">
+                      {edu.highlights.map((h, idx) => (
+                        <span
+                          key={idx}
+                          className="px-3 py-1 rounded-full bg-white/5 text-gray-400 text-xs"
+                        >
+                          {h}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-
-        {/* MOBILE: colonne unique avec ligne gauche */}
-        <div className="md:hidden flex flex-col gap-6">
-          <h3 className="text-lg font-bold text-purple-400 uppercase tracking-widest flex items-center gap-2">
-            <FaGraduationCap /> Formations
-          </h3>
-          {education.map((item, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-gray-800/60 border border-gray-700 rounded-2xl p-5 border-l-4 border-l-purple-500">
-              <h4 className="text-base font-bold text-white">{item.degree}</h4>
-              <p className="text-purple-400 text-sm font-medium">{item.school}</p>
-              <p className="text-gray-400 text-xs mt-1 mb-2">{item.period} • {item.location}</p>
-              <ul className="list-disc list-inside space-y-1">
-                {item.description.map((desc, idx) => <li key={idx} className="text-gray-300 text-sm">{desc}</li>)}
-              </ul>
-            </motion.div>
-          ))}
-
-          <h3 className="text-lg font-bold text-purple-400 uppercase tracking-widest flex items-center gap-2 mt-4">
-            <FaBriefcase /> Expériences
-          </h3>
-          {experiences.map((item, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-gray-800/60 border border-gray-700 rounded-2xl p-5 border-l-4 border-l-purple-500">
-              <h4 className="text-base font-bold text-white">{item.role}</h4>
-              <p className="text-purple-400 text-sm font-medium">{item.company}</p>
-              <p className="text-gray-400 text-xs mt-1 mb-2">{item.period} • {item.location}</p>
-              <ul className="list-disc list-inside space-y-1">
-                {item.description.map((desc, idx) => <li key={idx} className="text-gray-300 text-sm">{desc}</li>)}
-              </ul>
-            </motion.div>
-          ))}
         </div>
       </div>
     </section>
   );
 };
 
-export default ExperienceTimeline;
+export default Experience;

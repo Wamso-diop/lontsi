@@ -216,7 +216,7 @@ const Hero = () => {
                 className="absolute -right-2 bottom-16 z-20 bg-[#0c0a2e]/80 backdrop-blur-xl border border-white/10 rounded-2xl px-4 py-3"
               >
                 <div className="text-[10px] text-gray-400">Formation</div>
-                <div className="text-sm font-semibold text-white mt-0.5">ENSPD - GL5/div>
+                <div className="text-sm font-semibold text-white mt-0.5">ENSPD - GL5</div>
               </motion.div>
 
               {/* Social links */}

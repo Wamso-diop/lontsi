@@ -8,10 +8,32 @@ import faceAttend from "../assets/face.jpg";
 import ecommerce from "../assets/lexora.png";
 import pdfApp from "../assets/pdf.png";
 import messagingApp from "../assets/sms2.png";
+import pes from "../assets/pes.png";
+import zenstocks from "../assets/zenstoks.jpeg";
 
 const projects = [
   {
-    title: "Plateforme Projets Universitaires",
+
+    title: "ZenStocks",
+    description:
+      "SaaS de gestion d'inventaire destiné aux commerçants africains, pour suivre stocks et ventes en temps réel.",
+    tech: ["React", "FastAPI"],
+    github: null,
+    demo: "https://zenstocks-web.vercel.app/",
+    image: zenstocks,
+    featured: true,
+  },
+  {
+    title: "Pôle d'Excellence",
+    description:
+      "Plateforme web présentant les activités et services du Pôle d'Excellence.",
+    tech: ["React", "JavaScript"],
+    github: null,
+    demo: "https://www.poledexcellence.com/fr",
+    image: pes,
+    featured: true,
+  },
+  {  title: "Plateforme Projets Universitaires",
     description:
       "API de gestion de projets étudiants pour l'Université de Douala. Interface moderne avec gestion complète des workflows académiques.",
     tech: ["Python", "FastAPI", "JavaScript"],

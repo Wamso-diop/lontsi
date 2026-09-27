@@ -35,7 +35,7 @@ const socials = [
 ];
 
 const stats = [
-  { value: 2, suffix: "+", label: "Ans d'expérience" },
+  { value: 2.5, suffix: "+", label: "Ans d'expérience" },
   { value: 8, suffix: "+", label: "Projets livrés" },
   { value: 100, suffix: "%", label: "Satisfaction client" },
 ];
@@ -110,8 +110,8 @@ const Hero = () => {
                 Voir mes projets
               </a>
               <a
-                href="/src/assets/cv-boris-lontsi.pdf"
-                download
+                href="/LontsieBoris.pdf"
+                download="CV_LONTSIE_YEMAGOU_BORIS.pdf"
                 className="px-8 py-3.5 rounded-md border border-white/20 text-white font-medium text-sm hover:bg-white/5 transition-all duration-300"
               >
                 Télécharger CV

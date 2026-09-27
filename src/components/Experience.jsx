@@ -4,6 +4,31 @@ import { Briefcase, GraduationCap, MapPin } from "lucide-react";
 const experiences = [
   {
     type: "work",
+    role: "Développeur Backend",
+    company: "Soluty Agency",
+    period: "juin 2024– Aujourd'hui",
+    location: "Douala, Cameroun",
+    description: [
+      "Développement de ZenStocks, SaaS de gestion d'inventaire pour commerçants africains",
+      "Architecture backend avec FastAPI et interface React pour le suivi des stocks en temps réel",
+      "Poursuite de la collaboration avec l'agence après la fin du stage initial",
+    ],
+    tech: ["React", "FastAPI","Rust","Next", "React Native"],
+  },
+  {
+    type: "freelance",
+    role: "Développeur Frontend Freelance",
+    company: "Pôle d'Excellence",
+    period: "jan 2026 – mars. 2026",
+    location: "Douala, Cameroun",
+    description: [
+      "Conception et développement de la plateforme web du Pôle d'Excellence",
+      "Interface utilisateur responsive présentant les activités et services",
+    ],
+    tech: ["React", "JavaScript"],
+  },
+  {
+    type: "work",
     role: "Développeur Backend / API Developer",
     company: "ADS Ltd",
     period: "Mars 2025 – Nov. 2025",

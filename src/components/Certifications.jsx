@@ -1,11 +1,20 @@
 import { motion } from "framer-motion";
 import { Award } from "lucide-react";
-import { FaPython, FaReact } from "react-icons/fa";
+import { FaPython, FaReact, FaLinux} from "react-icons/fa";
 
 import pythonCert from "../assets/python.jpg";
 import devopsCert from "../assets/site.png";
+import linuxCert from "../assets/linux.png";
 
 const certifications = [
+  {
+    title: "Hands-on Introduction to Linux Commands and Shell Scripting",
+    provider: "IBM / Coursera",
+    description:
+      "Prise en main des commandes Linux essentielles et introduction au shell scripting pour l'administration système.",
+    icon: FaLinux,
+    image: linuxCert,
+  },
   {
     title: "Certification Python",
     provider: "Udemy / Coursera",
@@ -21,7 +30,7 @@ const certifications = [
       "Maîtrise de la bibliothèque React JS pour le développement d'interfaces utilisateur dynamiques et responsives.",
     icon: FaReact,
     image: devopsCert,
-  },
+  }
 ];
 
 const Certifications = () => {

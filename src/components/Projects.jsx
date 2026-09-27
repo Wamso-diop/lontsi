@@ -10,6 +10,7 @@ import pdfApp from "../assets/pdf.png";
 import messagingApp from "../assets/sms2.png";
 import pes from "../assets/pes.png";
 import zenstocks from "../assets/zenstoks.jpeg";
+import mymoney from "../assets/money.png";
 
 const projects = [
   {
@@ -21,6 +22,16 @@ const projects = [
     github: null,
     demo: "https://zenstocks-web.vercel.app/",
     image: zenstocks,
+    featured: true,
+  },
+  {
+    title: "MyMoney",
+    description:
+      "Application web full-stack de gestion des finances personnelles : suivi des revenus et dépenses, budgets par catégorie et historique en temps réel.",
+    tech: ["FastAPI", "PostgreSQL", "React"],
+    github: "https://github.com/Wamso-diop/MyMoney",
+    demo: "https://my-money-gamma-seven.vercel.app",
+    image: mymoney,
     featured: true,
   },
   {
